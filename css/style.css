@@ -8,12 +8,11 @@
 
 body {
     background-color: #F2F2F2;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 14px;
 }
 
 div#container {
-    border: 1px solid red;
     margin: 0 auto;
     width: 75%;
     padding: 2%;
@@ -31,7 +30,7 @@ a#area-logo:hover {
 }
 
 header {
-    margin-left: -20px;
+    margin-left: -30px;
 }
 
 header img {
@@ -39,14 +38,106 @@ header img {
 }
 
 main {
-    margin: 100px 0;
+    margin: 120px 0;
 }
 
 main h1 {
-    border: 1px solid blue;
     width: max-content;
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(58, 58, 58);
+}
+
+main form {
+    margin: 50px 0;
+}
+
+main form input {
+    height: 50px;
+}
+
+main form input[type="text"] {
+    width: 50%;
+    padding-left: 15px;
+    border: 1px solid rgba(58, 58, 58, 0.4);
+    border-radius: 10px 0 0  10px;
+    font-size: 16px;
+}
+
+main form input[type="submit"] {
+    width: 25%;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    background-color: #2E2EFE;
+    margin-left: -5px;
+    border-radius: 0 10px 10px 0;
+    transition: 0.4s;
+}
+
+main form input[type="submit"]:hover {
+    background-color: rgba(46, 46, 254, 0.8);
+    cursor: pointer;
+}
+
+div#area-user {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    padding: 2%;
+    display: flex;
+}
+
+div#area-user img {
+    width: 180px;
+    border-radius: 100px;
+}
+
+div#area-user div#infos-user {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 100%;
+    margin-left: 20px;
+}
+
+div#area-user div#infos-user h2 {
+    display: inline;
+}
+
+div#area-user div#infos-user section {
+    display: flex;
+    align-items: center;
+}
+
+div#area-user div#infos-user section a img {
+    width: 50px;
+    margin: -5px 0 0 10px;
+}
+
+div#area-user div#infos-user h4 {
+    color: gray;
+    font-weight: unset;
+    margin: 5px 0;
+}
+
+div#area-user div#infos-user section#follow {
+    margin: 5px 0;
+}
+
+div#area-user div#infos-user section#follow span {
+    font-size: 18px;
+}
+
+div#area-user div#infos-user p {
+    margin: 5px 0;
+    font-size: 17px;
 }
 
 .gray {
     color: #6E6E6E;
+}
+
+.font-16 {
+    font-size: 16px;
 }
