@@ -10,7 +10,7 @@ div#repo-info {
     padding: 2%;
 }
 
-div#repo-info a#avatar-link img#avatar {
+div#repo-info a#avatarLink img#avatar {
     width: 150px;
     border-radius: 100px;
     object-fit: cover;
@@ -27,7 +27,7 @@ div#repo-info section div {
     justify-content: space-between;
 }
 
-div#repo-info section div a#repo-link h2 {
+div#repo-info section div a#repoLink h2 {
     font-size: 28px;
     color: rgb(61, 61, 77);
     margin: 20px 0;

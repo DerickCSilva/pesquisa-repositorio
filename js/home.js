@@ -1,24 +1,3 @@
-let baseURL = 'https://api.github.com';
-
-let page = 0;
-let reposPerPage = 5;
-let allRepos;
-
-// Função que insere atributo em algum campo
-const insertAttribute = (tag, attribute, value, fields = false, values) => {
-    if(fields) {
-        Object.keys(fields).forEach((item) => {
-            if (item === 'avatar') {
-                fields[item].setAttribute('src', values[item]);
-            } else if (item === 'githubLink') {
-                fields[item].setAttribute('href', values[item]);
-            }
-        });
-    } else {
-        tag.setAttribute(attribute, value);
-    }
-}
-
 // Função que carrega mais repositórios
 const loadMoreRepos = (areaRepos) => {
     // Setando páginas e quais repositórios vão ser mostrado
