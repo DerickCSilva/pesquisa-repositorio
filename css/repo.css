@@ -34,24 +34,24 @@ div#repo-info section div a#repoLink h2 {
     transition: .2s;
 }
 
-div#repo-info section div a#repo-link h2:hover {
+div#repo-info section div a#repoLink h2:hover {
     transform: scale(1.02);
     color: #0101DF;
 }
 
-div#repo-info section div a#link-fork svg {
+div#repo-info section div a#linkFork svg {
     width: 50px;
     height: 50px;
     transition: .2s;
     stroke: black;
 }
 
-div#repo-info section div a#link-fork svg:hover path {
+div#repo-info section div a#linkFork svg:hover path {
     stroke: #0101DF;
     transition: .2s;
 }
 
-div#repo-info section div a#link-fork svg:hover {
+div#repo-info section div a#linkFork svg:hover {
     transform: scale(1.15);
 }
 
