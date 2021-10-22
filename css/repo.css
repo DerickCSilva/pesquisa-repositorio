@@ -1,0 +1,98 @@
+main#container {
+    margin-top: 35px;
+}
+
+div#repo-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+div#repo-info img#avatar {
+    width: 150px;
+    border-radius: 100px;
+}
+
+div#repo-info section {
+    width: 85%;
+    padding: 2%;
+}
+
+div#repo-info section div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div#repo-info section div h2 {
+    font-size: 28px;
+    color: rgb(61, 61, 77);
+    margin: 20px 0;
+    transition: .2s;
+}
+
+div#repo-info section div h2:hover {
+    transform: scale(1.02);
+    color: #0101DF;
+}
+
+div#repo-info section div svg {
+    width: 50px;
+    height: 50px;
+    transition: .2s;
+    stroke: black;
+}
+
+div#repo-info section div svg:hover path {
+    stroke: #0101DF;
+    transition: .2s;
+}
+
+div#repo-info section div svg:hover {
+    transform: scale(1.15);
+}
+
+div#repo-info section p {
+    font-size: 16px;
+    color: #585858;
+}
+
+main#container div#repo-metrics {
+    display: flex;
+    padding: 2%;
+}
+
+main#container div#repo-metrics section.metric {
+    width: 15%;
+
+}
+
+main#container div#repo-metrics section.metric strong {
+    display: block;
+    font-size: 36px;
+    color: rgb(61, 61, 77);
+}
+
+main#container div#repo-metrics section.metric span {
+    font-size: 20px;
+    color: rgb(115, 115, 128);
+}
+
+main#container section#languages {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+main#container section#languages h2 {
+    color: rgb(61, 61, 77);
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+main#container section#languages ul li {
+    list-style: none;
+    padding: 1.5%;
+    font-size: 20px;
+    font-style: italic;
+}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <title>Pesquisa de repositórios - GitHub</title>
 </head>
+
 <body>
     <div id="container">
         <header>
@@ -20,30 +22,187 @@
             <h1>
                 Busca por repositórios <br> pelo username.
             </h1>
-            <form action="" method="post">
+            <form action="" method="post" onsubmit="searchUser(event, username)">
                 <input type="text" id="username" placeholder="Coloque o nome de usuário.">
                 <input type="submit" value="Pesquisar">
+                <div id="not-found" style="color: red; margin: 10px; display: none;">Usuário não encontrado!</div>
             </form>
-            <div id="area-user">
-                <img src="https://avatars.githubusercontent.com/u/79711728?v=4" alt="Foto de perfil do usuário">
+
+            <div id="area-user" style="display: none;">
+                <img src="" id="avatar" alt="Foto de perfil do usuário">
                 <div id="infos-user">
                     <section>
-                        <h2>Derick Cardoso da Silva</h2>
-                        <a target="_blank" href="https://github.com/DerickCSilva">
+                        <h2 id="name"></h2>
+                        <a id="githubLink" target="_blank" href="">
                             <img src="./img/github-logo.png" alt="GitHub Logo">
                         </a>
                     </section>
-                    <h4>DerickCSilva</h4>
+                    <h4 id="login"></h4>
                     <section id="follow">
-                        <span>Seguidores: 16</span>
-                        <span style="margin-left: 40px;">Seguindo: 11</span>
+                        <span id="followers"></span>
+                        <span id="following" style="margin-left: 40px;"></span>
                     </section>
-                    <p>
-                        Cursando Tecnologia em Análise e Desenvolvimento de Sistema (TADS). <br> Trainee em Chatbot na Certsys. <br> Seja muito bem-vindo!
+                    <p id="bio">
+
                     </p>
                 </div>
             </div>
+
+            <div id="area-repos"></div>
+            <button onclick="loadMoreRepos()" id="more-repos">Carregar mais repositórios</button>
         </main>
     </div>
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    let baseURL = 'https://api.github.com';
+    
+    let page = 0;
+    let reposPerPage = 5;
+    let allRepos;
+
+    const loadMoreRepos = () => {
+        let nextPage = page + reposPerPage;
+        page = nextPage;
+        let nextRepos = allRepos.slice(nextPage, nextPage + reposPerPage);
+
+        if (nextRepos.length == 0 || nextRepos.length < 5) {
+            document.getElementById('more-repos').disabled = true;
+        }
+        
+        let areaRepos = document.getElementById('area-repos');
+        nextRepos.map(repo => {
+            let section = document.createElement('section');
+            section.classList.add('repo')
+            section.setAttribute('onclick', `viewRepoInfo('${repo.full_name}')`);
+
+            areaRepos.appendChild(section);
+
+            let img = document.createElement('img');
+            img.setAttribute('src', './img/file.png');
+            img.setAttribute('alt', 'Ícone pasta');
+            section.appendChild(img);
+
+            let div = document.createElement('div');
+            div.classList.add('infos-repo');
+            section.appendChild(div);
+
+            let h2 = document.createElement('h2');
+            h2.innerHTML = repo.full_name;
+            let p = document.createElement('p');
+            p.innerHTML = repo.description || '<b> - - - </b>';
+            div.appendChild(h2);
+            div.appendChild(p);
+        });
+    }
+
+    const getField = (...idNames) => {
+        let fields = {};
+
+        idNames.map(idName => {
+            let field = idName;
+            fields[field] = document.getElementById(idName);
+        });
+        return fields;
+    }
+
+    const insertValue = (fields, values) => {
+        Object.keys(fields).forEach((item) => {
+            if (item != 'githubLink') fields[item].innerHTML = values[item];
+        });
+    }
+
+    const insertAttribute = (fields, values) => {
+        Object.keys(fields).forEach((item) => {
+            if (item === 'avatar') {
+                fields[item].setAttribute('src', values[item]);
+            } else if (item === 'githubLink') {
+                fields[item].setAttribute('href', values[item]);
+            }
+        });
+    }
+
+    const viewRepoInfo = (repo) => {
+        localStorage.setItem('repo', repo);
+        window.location.href = '/repo.html';
+    }
+
+    const insertRepos = (data) => {
+        allRepos = data;
+        page = 0;
+        data = data.slice(page, reposPerPage);
+        if(data.length >= 5) {
+            document.getElementById('more-repos').disabled = false;
+        }
+        
+        let areaRepos = document.getElementById('area-repos');
+        document.getElementById('username').value = '';
+        
+        areaRepos.innerText = "";
+        data.map(repo => {
+            let section = document.createElement('section');
+            section.classList.add('repo')
+            section.setAttribute('onclick', `viewRepoInfo('${repo.full_name}')`);
+
+            areaRepos.appendChild(section);
+
+            let img = document.createElement('img');
+            img.setAttribute('src', './img/file.png');
+            img.setAttribute('alt', 'Ícone pasta');
+            section.appendChild(img);
+
+            let div = document.createElement('div');
+            div.classList.add('infos-repo');
+            section.appendChild(div);
+
+            let h2 = document.createElement('h2');
+            h2.innerHTML = repo.full_name;
+            let p = document.createElement('p');
+            p.innerHTML = repo.description || '<b> - - - </b>';
+            div.appendChild(h2);
+            div.appendChild(p);
+        });
+    }
+
+    const getRepos = async (username) => {
+        let { data } = await axios.get(`https://api.github.com/users/${username}/repos`);
+        insertRepos(data);
+    }
+
+    const searchUser = async (e, username) => {
+        e.preventDefault();
+        username = username.value;
+
+        let fields = getField('name', 'login', 'followers', 'following', 'bio', 'avatar', 'githubLink');
+
+        try {
+
+            let { data } = await axios.get(`${baseURL}/users/${username}`);
+            document.getElementById('area-user').style.display = 'flex';
+            document.getElementById('not-found').style.display = 'none';
+
+            let values = {
+                name: data.name,
+                login: data.login,
+                followers: `Seguidores: ${data.followers}`,
+                following: `Seguindo: ${data.following}`,
+                bio: `"${data.bio}"`,
+                avatar: data.avatar_url,
+                githubLink: data.html_url
+            }
+
+            insertAttribute(fields, values);
+            insertValue(fields, values);
+
+            getRepos(username);
+        } catch (err) {
+            document.getElementById('area-repos').innerHTML = '';
+            document.getElementById('area-user').style.display = 'none';
+            document.getElementById('not-found').style.display = 'block';
+            console.log(err);
+        }
+    }
+
+</script>
+
 </html>

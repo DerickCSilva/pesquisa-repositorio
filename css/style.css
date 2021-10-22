@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #F2F2F2;
+    background: #F2F2F2 url(../img/background.svg) no-repeat right top fixed;
     font-family: Roboto, sans-serif;
     font-size: 14px;
 }
@@ -25,7 +25,7 @@ a#area-logo {
 }
 
 a#area-logo:hover {
-    padding-left: 2%;
+    padding-left: 1%;
     transform: scale(1.05);
 }
 
@@ -76,16 +76,17 @@ main form input[type="submit"] {
     transition: 0.4s;
 }
 
-main form input[type="submit"]:hover {
+main form input[type="submit"]:hover, button#more-repos:hover {
     background-color: rgba(46, 46, 254, 0.8);
     cursor: pointer;
 }
 
 div#area-user {
     background-color: #FFFFFF;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 2%;
     display: flex;
+    margin-bottom: 60px;
 }
 
 div#area-user img {
@@ -112,7 +113,6 @@ div#area-user div#infos-user section {
 
 div#area-user div#infos-user section a img {
     width: 50px;
-    margin: -5px 0 0 10px;
 }
 
 div#area-user div#infos-user h4 {
@@ -132,6 +132,57 @@ div#area-user div#infos-user section#follow span {
 div#area-user div#infos-user p {
     margin: 5px 0;
     font-size: 17px;
+    font-style: italic;
+}
+
+main div#area-repos {
+    margin: 20px 0;
+}
+
+main div#area-repos section.repo {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 2%;
+    display: flex;
+    transition: .2s;
+}
+
+main div#area-repos section.repo:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+
+main div#area-repos section.repo img {
+    width: 75px;
+}
+
+main div#area-repos section.repo div.infos-repo {
+    padding: 2%;
+}
+
+main div#area-repos section.repo div.infos-repo h2 {
+    margin-bottom: 5px;
+}
+
+main div#area-repos section.repo div.infos-repo p {
+    color: gray;
+}
+
+button#more-repos {
+    width: 100%;
+    background-color: #2E2EFE;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    transition: .2s;
+    border-radius: 10px;
+}
+
+button#more-repos:disabled {
+    background-color: #888;
+    cursor: not-allowed;
 }
 
 .gray {
