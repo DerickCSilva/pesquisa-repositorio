@@ -16,6 +16,7 @@ body {
 div#container {
     margin: 0 auto;
     width: 75%;
+    min-width: 600px;
     padding: 2%;
 }
 

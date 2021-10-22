@@ -54,6 +54,7 @@ main div#area-user {
 main div#area-user img#avatar {
     width: 180px;
     border-radius: 100px;
+    object-fit: cover;
 }
 
 main div#area-user div#infos-user {
