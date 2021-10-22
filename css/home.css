@@ -1,0 +1,150 @@
+/* Formatações do main */
+main {
+    margin: 120px 0;
+}
+
+main h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: rgb(58, 58, 58);
+}
+
+main form {
+    margin: 50px 0;
+}
+
+main form input {
+    height: 50px;
+}
+
+main form input[type="text"] {
+    width: 50%;
+    font-size: 16px;
+    padding-left: 15px;
+    border: 1px solid rgba(58, 58, 58, 0.4);
+    border-radius: 10px 0 0  10px;
+}
+
+main form input[type="submit"] {
+    width: 25%;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #2E2EFE;
+    margin-left: -5px;
+    transition: 0.4s;
+}
+
+main form input[type="submit"]:hover, button#more-repos:hover {
+    background-color: rgba(46, 46, 254, 0.8);
+    cursor: pointer;
+}
+
+/* Formatações da área do usuário */
+main div#area-user {
+    display: flex;
+    padding: 2%;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+
+main div#area-user img#avatar {
+    width: 180px;
+    border-radius: 100px;
+}
+
+main div#area-user div#infos-user {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    width: 100%;
+    margin-left: 20px;
+}
+
+main div#area-user div#infos-user section {
+    display: flex;
+    align-items: center;
+}
+
+main div#area-user div#infos-user section h2 {
+    display: inline;
+}
+
+main div#area-user div#infos-user section a img {
+    width: 50px;
+}
+
+main div#area-user div#infos-user h4 {
+    font-weight: unset;
+    color: gray;
+    margin: 5px 0;
+}
+
+main div#area-user div#infos-user section#follow {
+    margin: 5px 0;
+}
+
+main div#area-user div#infos-user section#follow span {
+    font-size: 18px;
+}
+
+main div#area-user div#infos-user p {
+    margin: 5px 0;
+    font-size: 17px;
+    font-style: italic;
+}
+
+/* Formatações da área dos repositórios */
+main div#area-repos {
+    margin: 20px 0;
+}
+
+main div#area-repos section.repo {
+    display: flex;
+    padding: 2%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    transition: .2s;
+}
+
+main div#area-repos section.repo:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+main div#area-repos section.repo img {
+    width: 75px;
+}
+
+main div#area-repos section.repo div.infos-repo {
+    padding: 2%;
+}
+
+main div#area-repos section.repo div.infos-repo h2 {
+    margin-bottom: 5px;
+}
+
+main div#area-repos section.repo div.infos-repo p {
+    color: gray;
+}
+
+/* Formatação dos botões ver mais */
+main button#more-repos {
+    display: none;
+    width: 100%;
+    padding: 15px 30px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: #2E2EFE;
+    transition: .2s;
+}
+
+main button#more-repos:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}

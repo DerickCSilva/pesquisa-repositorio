@@ -1,3 +1,4 @@
+/* Formatações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -18,173 +19,27 @@ div#container {
     padding: 2%;
 }
 
-a#area-logo {
+/* Formatações do cabeçalho */
+header {
+    margin-left: -30px;
+}
+
+header a#area-logo {
     display: flex;
     align-items: center;
     transition: 0.2s;
 }
 
-a#area-logo:hover {
+header a#area-logo:hover {
     padding-left: 1%;
     transform: scale(1.05);
 }
 
-header {
-    margin-left: -30px;
-}
-
-header img {
+header a#area-logo img {
     width: 100px;
 }
 
-main {
-    margin: 120px 0;
-}
-
-main h1 {
-    width: max-content;
-    font-size: 40px;
-    font-weight: 700;
-    color: rgb(58, 58, 58);
-}
-
-main form {
-    margin: 50px 0;
-}
-
-main form input {
-    height: 50px;
-}
-
-main form input[type="text"] {
-    width: 50%;
-    padding-left: 15px;
-    border: 1px solid rgba(58, 58, 58, 0.4);
-    border-radius: 10px 0 0  10px;
-    font-size: 16px;
-}
-
-main form input[type="submit"] {
-    width: 25%;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    border: none;
-    background-color: #2E2EFE;
-    margin-left: -5px;
-    border-radius: 0 10px 10px 0;
-    transition: 0.4s;
-}
-
-main form input[type="submit"]:hover, button#more-repos:hover {
-    background-color: rgba(46, 46, 254, 0.8);
-    cursor: pointer;
-}
-
-div#area-user {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    padding: 2%;
-    display: flex;
-    margin-bottom: 60px;
-}
-
-div#area-user img {
-    width: 180px;
-    border-radius: 100px;
-}
-
-div#area-user div#infos-user {
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    width: 100%;
-    margin-left: 20px;
-}
-
-div#area-user div#infos-user h2 {
-    display: inline;
-}
-
-div#area-user div#infos-user section {
-    display: flex;
-    align-items: center;
-}
-
-div#area-user div#infos-user section a img {
-    width: 50px;
-}
-
-div#area-user div#infos-user h4 {
-    color: gray;
-    font-weight: unset;
-    margin: 5px 0;
-}
-
-div#area-user div#infos-user section#follow {
-    margin: 5px 0;
-}
-
-div#area-user div#infos-user section#follow span {
-    font-size: 18px;
-}
-
-div#area-user div#infos-user p {
-    margin: 5px 0;
-    font-size: 17px;
-    font-style: italic;
-}
-
-main div#area-repos {
-    margin: 20px 0;
-}
-
-main div#area-repos section.repo {
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding: 2%;
-    display: flex;
-    transition: .2s;
-}
-
-main div#area-repos section.repo:hover {
-    cursor: pointer;
-    transform: scale(1.02);
-}
-
-
-main div#area-repos section.repo img {
-    width: 75px;
-}
-
-main div#area-repos section.repo div.infos-repo {
-    padding: 2%;
-}
-
-main div#area-repos section.repo div.infos-repo h2 {
-    margin-bottom: 5px;
-}
-
-main div#area-repos section.repo div.infos-repo p {
-    color: gray;
-}
-
-button#more-repos {
-    width: 100%;
-    background-color: #2E2EFE;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    transition: .2s;
-    border-radius: 10px;
-}
-
-button#more-repos:disabled {
-    background-color: #888;
-    cursor: not-allowed;
-}
-
+/* Formatação de clases usuais */
 .gray {
     color: #6E6E6E;
 }

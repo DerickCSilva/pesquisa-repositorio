@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/home.css">
     <title>Pesquisa de repositórios - GitHub</title>
 </head>
 
 <body>
     <div id="container">
         <header>
-            <a href="index.html" id="area-logo">
+            <a href="./home.html" id="area-logo">
                 <img src="./img/github-logo.png" alt="GitHub Logo">
                 <h2><span class="gray">Pesquisa de repositórios</span> - GitHub</h2>
             </a>
@@ -29,7 +30,7 @@
             </form>
 
             <div id="area-user" style="display: none;">
-                <img src="" id="avatar" alt="Foto de perfil do usuário">
+                <img id="avatar" src="" alt="Foto de perfil do usuário">
                 <div id="infos-user">
                     <section>
                         <h2 id="name"></h2>
@@ -49,7 +50,7 @@
             </div>
 
             <div id="area-repos"></div>
-            <button onclick="loadMoreRepos()" id="more-repos">Carregar mais repositórios</button>
+            <button id="more-repos" onclick="loadMoreRepos()" disabled>Carregar mais repositórios</button>
         </main>
     </div>
 </body>
@@ -124,13 +125,15 @@
 
     const viewRepoInfo = (repo) => {
         localStorage.setItem('repo', repo);
-        window.location.href = '/repo.html';
+        window.location.href = '/pages/repo.html';
     }
 
     const insertRepos = (data) => {
         allRepos = data;
         page = 0;
         data = data.slice(page, reposPerPage);
+        
+        document.getElementById('more-repos').style.display = 'block';
         if(data.length >= 5) {
             document.getElementById('more-repos').disabled = false;
         }
@@ -199,6 +202,7 @@
             document.getElementById('area-repos').innerHTML = '';
             document.getElementById('area-user').style.display = 'none';
             document.getElementById('not-found').style.display = 'block';
+        document.getElementById('more-repos').style.display = 'none';
             console.log(err);
         }
     }
