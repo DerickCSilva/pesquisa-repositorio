@@ -33,7 +33,7 @@ const getLanguages = async (apiLanguages) => {
 }
 
 // Função que pega as informações do repositório selecionado
-const getRepo = async (avatar, avatarLink, repoLink) => {
+const getRepo = async (avatar, avatarLink, repoLink, userAndRepo, description, linkFork, stars, watchers, forks) => {
     // Consumindo API
     let { data } = await axios.get(`${baseURL}/repos/${repo}`);
 
@@ -49,7 +49,7 @@ const getRepo = async (avatar, avatarLink, repoLink) => {
     if (!data.fork) {
         linkFork.style.display = 'none';
     } else {
-        insertAttribute(linkFork, 'href', data.parent.html_ur);
+        insertAttribute(linkFork, 'href', data.parent.html_url);
     }
 
     stars.innerHTML = data.watchers_count;

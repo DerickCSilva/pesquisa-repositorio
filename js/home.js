@@ -149,8 +149,8 @@ const searchUser = async (event, username) => {
         let values = {
             name: data.name,
             login: data.login,
-            followers: `Seguidores: ${data.followers}`,
-            following: `Seguindo: ${data.following}`,
+            followers: `Seguidores: <b> ${data.followers} </b>`,
+            following: `Seguindo: <b> ${data.following} </b>`,
             bio: `"${data.bio}"`,
             avatar: data.avatar_url,
             githubLink: data.html_url
