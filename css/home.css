@@ -25,6 +25,12 @@ main form input[type="text"] {
     padding-left: 15px;
     border: 1px solid rgba(58, 58, 58, 0.4);
     border-radius: 10px 0 0  10px;
+    transition: .4s;
+}
+
+main form input[type="text"]:focus {
+    transition: .4s;
+    width: 75%;
 }
 
 main form input[type="submit"] {
