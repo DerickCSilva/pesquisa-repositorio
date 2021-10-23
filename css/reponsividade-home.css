@@ -1,0 +1,161 @@
+@media (max-width: 500px) {
+    body {
+        background: #F2F2F2 url(../img/background.svg) no-repeat center top fixed;
+    }
+    
+    div#container {
+        width: 90%;
+    }
+
+    header {
+        margin: 0;
+    }
+
+    header a#area-logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header a#area-logo h2 {
+        margin-top: 5px;
+        font-size: 18px;
+    }
+
+    main h1 {
+        text-align: center;
+        min-width: 0;
+        font-size: 30px;
+    }
+
+    main form input[type="text"] {
+        width: 65%;
+        font-size: 14px;
+    }
+    
+    main form input[type="submit"] {
+        font-size: 14px;
+    }
+
+    main div#area-user {
+        flex-wrap: wrap;
+    }
+
+    main div#area-user img#avatar {
+        margin: 0 auto;
+        width: 130px;
+    }
+
+    main div#area-user div#infos-user {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    main div#area-user div#infos-user section h2 {
+        font-size: 140%;
+    }
+
+    main div#area-user div#infos-user p {
+        font-size: 16px;
+    }
+
+    /* Formatações da área dos repositórios */
+    main div#area-repos section.repo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    main div#area-repos section.repo div.infos-repo h2 {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    div#container {
+        width: 90%;
+    }
+    
+    main div#area-user div#infos-user {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    main div#area-repos section.repo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    main div#area-repos section.repo div.infos-repo h2 {
+        font-size: 18px;
+    }
+
+    main button#more-repos {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    div#container {
+        width: 90%;
+    }
+
+    main form input[type="text"], main form input[type="submit"] {
+        font-size: 20px;
+    }
+
+    main button#more-repos {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    div#container {
+        width: 90%;
+    }
+
+    main form input[type="text"], main form input[type="submit"] {
+        font-size: 20px;
+    }
+
+    main div#area-user img#avatar {
+        width: 200px;
+    }
+
+    main div#area-user div#infos-user section h2 {
+        font-size: 28px;
+        margin-right: 10px;
+    }
+
+    main div#area-user div#infos-user h4 {
+        font-size: 18px;
+    }
+
+    main div#area-user div#infos-user section#follow span {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    main div#area-user div#infos-user p {
+        font-size: 20px;
+    }
+
+    main div#area-repos section.repo img {
+        width: 10%;
+    }
+
+    main div#area-repos section.repo div.infos-repo {
+        width: 100%;
+        margin-left: 20px;
+    }
+    
+    main div#area-repos section.repo div.infos-repo h2 {
+        font-size: 24px;
+    }
+
+    main div#area-repos section.repo div.infos-repo p {
+        font-size: 16px;
+    }
+
+    main button#more-repos {
+        font-size: 20px;
+    }
+}

@@ -151,7 +151,7 @@ const searchUser = async (event, username) => {
             login: data.login,
             followers: `Seguidores: <b> ${data.followers} </b>`,
             following: `Seguindo: <b> ${data.following} </b>`,
-            bio: `"${data.bio}"`,
+            bio: (`"${data.bio || "Sem descrição..."}"`),
             avatar: data.avatar_url,
             githubLink: data.html_url
         }

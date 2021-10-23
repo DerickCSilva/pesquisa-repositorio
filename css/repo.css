@@ -40,7 +40,7 @@ div#repo-info section div a#repoLink h2:hover {
 }
 
 div#repo-info section div a#linkFork svg {
-    width: 50px;
+    width: 5    0px;
     height: 50px;
     transition: .2s;
     stroke: black;
@@ -48,7 +48,7 @@ div#repo-info section div a#linkFork svg {
 
 div#repo-info section div a#linkFork svg:hover path {
     stroke: #0101DF;
-    transition: .2s;
+    transition: .1s;
 }
 
 div#repo-info section div a#linkFork svg:hover {
@@ -67,7 +67,8 @@ div#repo-metrics {
 }
 
 div#repo-metrics section.metric {
-    width: 15%;
+    width: 25%;
+    margin-bottom: 30px;
 }
 
 div#repo-metrics section.metric strong {
@@ -97,6 +98,6 @@ section#languages h2 {
 section#languages ul#language li {
     list-style: none;
     padding: 1.5%;
-    font-size: 20px;
+    font-size: 22px;
     font-style: italic;
 }
